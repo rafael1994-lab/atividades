@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+    <style>
+        h1{
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        h2{
+            font-family: 'Courier New''Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: medium;
+        }
+        body{
+            background-color:#00a8b5;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            padding: 20px;
+        }
+        input{
+            width: 100px;
+        }
+        #btnlogin{
+            margin-top: 8px;
+            padding: 8px;
+            background-color: aquamarine;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="titulogeral" class "titulogeral">Formulário de Contato</h1>
+    <h2>Por favor preencha com suas infomações e entraremos em contato</h2>
+    <br><br>
+
+    <form action="">
+    <label for="">Seu Nome</label>
+    <input type="text" id="nome" class="nome"> <input type="text" id="nome" class="nome">
+
+    <BR><BR>
+
+    <label for="">Seu Email</label>
+    <input type="text" id="nome" class="nome">
+
+    <BR><BR>
+
+    <label for="">Telefone</label>
+    <input type="text" id="nome" class="nome"> <input type="text" id="nome" class="nome"> <input type="text" id="nome" class="nome">
+
+    <BR><BR>
+
+    <label for="cidade">Assunto da mensagem</label>
+    <select id="cidade" name="cidade">
+        <option value="" disabled selected>Selecione uma opçao</option>
+        <option value="moc">Admissão</option>
+        <option value="pira">Desligamento</option>
+        <option value="janu">Outros</option>
+    </select>   
+     <BR><BR>
+
+
+    <label for="mensagem">Mensagem</label>
+    <textarea name="mensagem" id="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem aqui"></textarea><br><br>
+<br><br>
+
+<label for="fem">Verificação</label>
+    <input type="checkbox" id="fem" class="fem" value="fem" name="gen">
+    <br><br>
+
+
+<input type="submit" id="btnlogin" value="Enviar">
+
+ </form>
+</body>
+</html>

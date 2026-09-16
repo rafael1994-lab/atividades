@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+    <style>
+        #titulogeral{
+            font-family:Arial, Helvetica, sans-serif
+        }
+        label{
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        input[type="nome"],
+        input[type="email"]
+        input[type="telefone"]
+        {
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #btnlogin{
+            margin-top: 15px;
+            padding: 8px;
+            background-color: aquamarine;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 15px;
+            border-radius: 8px;
+           
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Seus dados</legend>
+            <label type="nome">Nome</label>
+            <input type="text" id="nome" name="nome">
+            
+        <br>
+            <label for="email">email</label>
+            <input type="email" name="email" id="email">
+        <br>
+             <label for="Telefone">Telefone</label>
+            <input type="password" name="Senha" id="senha">
+
+        <br>
+            
+        </fieldset>
+<br>
+
+         <fieldset>
+            <legend>Endereço de entrega</legend>
+            <label for="mensagem">Endereço</label>
+    <textarea name="mensagem" id="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem aqui"></textarea><br><br>
+            
+        <br>
+            <label for="Codigo_postal">Codigo postal</label>
+            <input type="password" name="Senha" id="senha">
+        <br>
+
+        <br>
+            <label for="Pais">País</label>
+            <input type="pais" name="pais" id="pais">
+
+            
+        </fieldset>
+<br>
+
+    <fieldset>
+         <fieldset>
+            <legend>1.Dados do cartão</legend>
+            <label for="masc">Visa</label>
+            <input type="radio" id="visa" class="visa" value="visa" name="cartao">
+            <label for="masc">Mastercard</label>
+            <input type="radio" id="Mastercard" class="Cielo" value="Mastercard" name="cartao">
+            <label for="masc">Cielo</label>
+            <input type="radio" id="Cielo" class="Cielo" value="Cielo" name="cartao">
+         </fieldset>
+
+            
+        <br>
+            <label for="numero">2.Número do cartão</label>
+            <input type="numero" name="numero" id="numero">
+
+            <label for="numero">3.Código de segurança</label>
+            <input type="numero" name="numero" id="numero">
+
+            <label for="numero">4.Nome no cartão</label>
+            <input type="nome" name="nome" id="nome">
+        <br>
+    </fieldset>
+            
+
+        </fieldset>
+
+    </form>
+</body>
+</html>

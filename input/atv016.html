@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+    <style>
+        #titulogeral{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="titulogeral" class "titulogeral">atv016</h1>
+    <br><br>
+
+    <form action="">
+    <label for="name">Nome</label>
+    <input type="text" id="nome" class="nome">
+
+    <br><br>
+    <label for="sobrenome">Sobrenome</label>
+    <input type="text" id="sobrenome" class="sobrenome">
+    <br><br>
+
+    <input type="radio" id="masc" class="masc" value="masc" name="gen">
+    <label for="masc">Masculino</label>
+    <br>
+    <input type="radio" id="fem" class="fem" value="fem" name="gen">
+    <label for="fem">Feminino</label>
+    <br>
+    <input type="radio" id="fem" class="fem" value="fem" name="gen">
+    <label for="fem">Não Declarado</label>
+    <br>
+
+    <br><br>
+    <label for="option">Marque as opçoes de seu interesse</label>
+    <br>
+     <label for="option">ASP.NET</label>
+    <input type="radio" id="net" class="net" value="ASP.NET" name="asp.net">
+    <br>
+    <label for="option">Javascript</label>
+    <input type="radio" id="net" class="net" value="Javascript" name="Javascript">
+    <br>
+    <label for="option">PHP</label>
+    <input type="radio" id="net" class="net" value="PHP" name="PHP">
+    <br>
+    <label for="option">Python</label>
+    <input type="radio" id="net" class="net" value="Python" name="Python">
+    <br>
+
+    <label for="mensagem">Entre com seus comentarios na caixa a seguir</label>
+    <br>
+    <textarea name="mensagem" id="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem aqui"></textarea><br><br>
+
+
+    
+    <label for="cidade">Selecione as tecnologias que deseja aprender</label>
+    <br>
+    <select id="cidade" name="cidade">
+        <option value="" disable selected>Selecione uma opçao</option>
+        <option value="asp">ASP.NET</option>
+        <option value="c">Linguagem C</option>
+        <option value="c++">C++</option>
+        <option value="java">Java</option>
+    
+    </select>   
+
+
+    <br><br>
+    <label for="arquivo">Selecione um arquivo de seu computador para upload</label>
+    <br>
+    <input type="file" id="arquivo" class="arquivo" name="arquivo" accept=".pdf, .png, .jpg">
+     <br><br>
+    <input type="submit" value="Enviar">
+    <br>
+    <input type="reset" value="Resetar">
+
+
+    
+
+  </form>
+</body>
+</html>

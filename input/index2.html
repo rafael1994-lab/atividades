@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+    <style>
+        #titulogeral{
+            font-family:Arial, Helvetica, sans-serif
+        }
+        label{
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        input[type="text"],
+        input[type="password"]{
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #btnlogin{
+            margin-top: 8px;
+            padding: 8px;
+            background-color: aquamarine;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        fieldset{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 15px;
+            border-radius: 8px;
+            margin: auto;
+            background-color: blanchedalmond;
+
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Formulário de Login</legend>
+            <label for="nome">Nome</label>
+            <input for="text" id="nome" name="nome">
+        <br>
+            <label for="Senha">Senha</label>
+            <input type="password" name="Senha" id="senha">
+        <br>
+
+            <input type="submit" id="botaologin" value="login">
+            <input type="reset" value="Sair" id="btnlogin">
+
+        </fieldset>
+
+    </form>
+</body>
+</html>

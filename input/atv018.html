@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inputs</title>
+    <style>
+        #titulogeral{
+            font-family:Arial, Helvetica, sans-serif
+        }
+        label{
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        input[type="text"],
+        input[type="password"]{
+            padding: 8px;
+            border: 1px solid black;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #btnlogin{
+            margin-top: 8px;
+            padding: 8px;
+            background-color: aquamarine;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        fieldset{
+            flex-direction: column;
+            gap: 10px;
+            max-width: auto;
+            margin: 0 auto;
+            padding: 15px;
+            border-radius: 8px;
+            margin: auto;
+            background-color: blanchedalmond;
+
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <fieldset>
+    <form action="">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <label for="nome">Nome</label>
+            <input for="text" id="nome" name="nome">
+        <br><br>
+            <label for="nome">Endereço</label>
+            <input for="Endereço" id="Endereço" name="Endereço">
+        <br><br>
+
+            <label for="nome">Cidade</label>
+            <input for="cidade" id="cidade" name="cidade">
+            <br><br>
+
+    <label for="cidade">Estado</label>      
+    <select id="estado" name="estado">
+        <label for="cidade">Estado</label>
+        <option value="" disable selected>Selecione uma opçao</option>
+        <option value="moc">São Paulo</option>
+        <option value="pira">Minas Gerais</option>
+        <option value="janu">Espirito Santo</option>
+    </select>
+        </fieldset>
+
+    <br><br>
+    
+    
+    <fieldset>
+            <legend>Dados Profissionais</legend>
+            <label for="nome">Natureza do cargo</label>
+            <br>
+            <input type="radio" id="func" class="func" name="funcao">
+            <label for="analista">Gerência</label>
+            <input type="radio" id="func" class="func" name="funcao">
+            <label for="analista">Analista</label>
+            <input type="radio" id="func" class="func" name="funcao">
+            <label for="analista">Financeiro</label>
+            <input type="radio" id="func" class="func" name="funcao">
+            <label for="analista">Recepção</label>
+            <input type="radio" id="func" class="func" name="funcao">
+            <label for="analista">Administrativo</label>
+            <input type="radio" id="func" class="func" name="funcao">
+            <label for="analista">Juridico</label>
+            
+        <br>
+            <label for="nome">Area de Interesse</label>
+            <br>
+            <input type="checkbox" id="func" class="func" name="funcao">
+            <label for="analista">Computação</label>
+            <input type="checkbox" id="func" class="func" name="funcao">
+            <label for="analista">Biologia</label>
+            <input type="checkbox" id="func" class="func" name="funcao">
+            <label for="analista">Meio Ambiente</label>
+            <input type="checkbox" id="func" class="func" name="funcao">
+            <label for="analista">Engenharia</label>
+            <input type="checkbox" id="func" class="func" name="funcao">
+            <label for="analista">História</label>
+            
+            
+        <br>
+
+            <label for="mensagem">Mini-Currículo</label>
+    <textarea name="mensagem" id="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem aqui"></textarea><br><br>
+
+        </fieldset>
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpar">
+        </fieldset>
+
+    </form>
+</body>
+</html>
