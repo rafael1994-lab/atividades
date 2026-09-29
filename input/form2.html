@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <style>
+        form{
+            background: rgba(255, 255, 255, 0.15);
+            max-width: 400px;
+            margin-left: 10%;
+            margin-top: 1%;
+            border-radius: 8%;
+            
+
+            
+        }
+        @layer {
+            * {
+                margin: 0;
+            }
+        }
+        
+        body {
+    min-height: 100vh;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('dota.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+        h1 {
+            color: #0f0f0f;
+            margin-bottom: 15px;
+            font-size: 24px;
+            background-color: #2b5cff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        fieldset {
+            border: none;
+            padding: 20px;
+            border-radius: 12px;
+            width: 450px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+        }
+
+        .botao {
+            background-color: antiquewhite;
+            border-radius: 8px;
+            border-width: 2px;
+            border-style: solid;
+            border-color: #2b5cff;
+            padding: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .botao:hover {
+            background-color: #04268b;
+        }
+
+        input[type="text"], textarea, select {
+            border-radius: 8px;
+            border: 2px solid rgb(93, 0, 112);
+            font-size: 15px;
+            background-color: aliceblue;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+
+        textarea {
+        
+            height: 80px;
+        }
+
+        
+
+        label {
+            font-size: 15px;
+            font-weight: bolder;
+            color: #161111;
+        }
+
+    
+    </style>
+</head>
+<body>
+
+    <h1>Formulário de Cadastro</h1>
+    
+    <form action="https://sheetdb.io/api/v1/olupzyw44mzyo" method="post">
+        <fieldset>
+          
+            <label>Nome</label>
+                    <input type="text" name="data[nome]" id="nome">
+                    
+            <br>
+            <label>Sobrenome</label>
+                    <input type="text" name="data[sobrenome]" id="sobrenome">
+        
+
+           
+            <label for="empresa">Empresa</label>
+            <input type="text" name="data[empresa]" id="empresa">
+
+            <label for="email">E-mail</label>
+            <input type="text" name="data[email]" id="email">
+
+            <label for="assunto">Assunto</label>
+            <textarea name="data[assunto]" id="assunto"></textarea>
+
+
+            <label>Telefone com DDD</label>
+                    <input type="text" name="data[ddd]" id="ddd">
+                   
+                   
+
+            <label for="sexo">Sexo</label>
+            <select name="data[sexo]" id="sexo">
+                <option value="" disabled selected>- Selecione a opção</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+                <option value="Prefiro não informar">Prefiro não informar</option>
+            </select>
+
+            <label>Você está começando na programação?</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="data[comecando_programacao]" value="Sim"> Sim
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="data[comecando_programacao]" value="Não"> Não
+                </label>
+            </div>
+
+            <input class="botao" type="submit" name="data[botao]" id="botao" value="Enviar">
+        </fieldset>
+    </form>
+
+</body>
+</html>
