@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carrossel {
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slides img {
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: rgba(0,0,0,0.75);
+}
+.esquerda { left: 10px; }
+.direita { right: 10px; }
+    </style>
+</head>
+<body>
+    <div class="carrossel">
+  <div class="slides">
+    <img src="bleach.jpg" alt="Carrossel HTML CSS Imagem 1">
+    <img src="death.jpg" alt="Carrossel HTML CSS Imagem 2">
+    <img src="cowboy.jpg" alt="Carrossel HTML CSS Imagem 3">
+  </div>
+  <button class="esquerda">&#10094;</button>
+  <button class="direita">&#10095;</button>
+</div>
+
+<script>
+
+    const slides = document.querySelector('.slides');
+const imagens = document.querySelectorAll('.slides img');
+const btnEsq = document.querySelector('.esquerda');
+const btnDir = document.querySelector('.direita');
+
+let index = 0;
+
+function mostrarSlide() {
+  slides.style.transform = `translateX(${-index * 100}%)`;
+}
+
+btnDir.addEventListener('click', () => {
+  index = (index + 1) % imagens.length;
+  mostrarSlide();
+});
+
+btnEsq.addEventListener('click', () => {
+  index = (index - 1 + imagens.length) % imagens.length;
+  mostrarSlide();
+});
+
+setInterval(() => {
+  index = (index + 1) % imagens.length;
+  mostrarSlide();
+}, 3000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="meuInput" placeholder="Digite seu texto">
+    <button id="meuBotao">Comentar</button>
+
+    <p>Comentario digitado: <span id="result"></span></p>
+
+    <script>
+        const input = document.getElementById('meuInput');
+        const botao = document.getElementById('meuBotao');
+        const result = document.getElementById('result');
+
+        function mostrarComentario(){
+            const textoDigitado = input.value;
+            result.textContent = textoDigitado;
+        }
+
+        botao.addEventListener('click', mostrarComentario)
+    </script>
+</body>
+</html>

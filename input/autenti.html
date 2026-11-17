@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    background: #f4f7f6;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+#formLogin {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+}
+#formLogin h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+#formLogin label {
+    display: block;
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+#formLogin input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #f9f9f9;
+    outline: none;
+}
+#formLogin button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    
+}
+   
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<form id="formLogin">
+    <h1>LOGIN</h1>
+    <label for="user">Usuário</label>
+    <input type="text" name="user"id=user>
+
+    <label for="pass">Senha:</label>
+    <input type="passwod" name="pass"id="pass">
+    <button type="submit">Entrar</button>
+</form>
+<script>
+
+    const usuarios = [
+        {usuario: "fredy", senha:"senhaforte123"},
+        {usuario: "tonhao", senha:"bastiao123"},
+    ];
+
+    document.getElementById("formLogin") .addEventListener("submit",function(log) {
+        log.preventDefault();
+        const user = document.getElementById("user").value;
+        const pass = document.getElementById("pass").value;
+
+        const logado = usuarios.find(x => x.usuario === user && x.senha === pass);
+
+
+        if(logado){
+            sessionStorage.setItem("usuarioLogado", logado.usuario);
+            window.location.href = "pages/home.html";
+        }else{
+            alert("Usuário ou Senha incorretos.")
+        }
+})
+
+</script>
+
+</body>
+</html>

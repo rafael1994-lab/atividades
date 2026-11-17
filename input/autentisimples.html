@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Ouvidoria</title>
+    <style>
+        body {
+            background: #f4f7f6;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        #formLogin, #formOuvidoria {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 380px;
+        }
+        #formLogin h1, #formOuvidoria h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #555555;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333333;
+            background-color: #f9f9f9;
+            outline: none;
+            box-sizing: border-box;
+        }
+        button, input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="formLogin">
+        <h1>LOGIN</h1>
+        <label for="user">Usuário</label>
+        <input type="text" name="user" id="user">
+
+        <label for="pass">Senha:</label>
+        <input type="password" name="pass" id="pass">
+        <button type="submit">Entrar</button>
+    </form>
+
+    <form id="formOuvidoria" class="hidden">
+        <h1>OUVIDORIA TECNOLOGIA</h1>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" class="nome">
+
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="numero">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" class="email">
+
+        <label for="arquivo">Selecione seu Arquivo</label>
+        <input type="file" id="arquivo" class="arquivo" name="arquivo" accept=".pdf, .png, .jpg">
+
+        <label for="semana">Selecione a data do ocorrido</label>
+        <input type="week" id="semana" name="semana">
+
+        <label for="data">Selecione uma Data:</label>
+        <input type="date" id="data" name="data">
+
+        <label for="mensagem">Descrição dos fatos</label>
+        <textarea name="mensagem" id="mensagem" rows="5" cols="30" placeholder="Caixa de texto com 5 linhas e 30 colunas"></textarea>
+
+        <label for="cargo">Cargo</label>
+        <select name="cargo_select" id="cargo_select">
+            <option value="T.I">T.I</option>
+            <option value="Atendente">Atendente</option>
+            <option value="Marketing">Marketing</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+<script>
+    const usuarios = [
+        {usuario: "fredy", senha: "senhaforte123"},
+        {usuario: "tonhao", senha: "bastiao123"},
+        {usuario: "rafael", senha: "123"},
+        {usuario: "lucas", senha: "123"},
+        {usuario: "ana", senha: "123"},
+        {usuario: "douglas", senha: "123"},
+        {usuario: "ronaldinho", senha: "123"},
+        {usuario: "pele", senha: "123"},
+        {usuario: "marta", senha: "123"},
+        {usuario: "ribery", senha: "123"}
+    ];
+
+    document.getElementById("formLogin").addEventListener("submit", function(log) {
+        log.preventDefault();
+        const user = document.getElementById("user").value;
+        const pass = document.getElementById("pass").value;
+
+        const logado = usuarios.find(x => x.usuario === user && x.senha === pass);
+
+        if (logado) {
+            sessionStorage.setItem("usuarioLogado", logado.usuario);
+            document.getElementById("formLogin").classList.add("hidden");
+            document.getElementById("formOuvidoria").classList.remove("hidden");
+        } else {
+            alert("Usuário ou Senha incorretos.");
+        }
+    });
+
+    document.getElementById("formOuvidoria").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const API_SHEETDB = 'https://sheetdb.io/api/v1/mpm5u8pxto648';
+
+        const dados = {
+            data: {
+                nome: document.getElementById("nome").value,
+                idade: document.getElementById("idade").value,
+                email: document.email = document.getElementById("email").value,
+                arquivo: document.getElementById("arquivo").value,
+                semana: document.getElementById("semana").value,
+                data: document.getElementById("data").value,
+                mensagem: document.getElementById("mensagem").value,
+                cargo_select: document.getElementById("cargo_select").value
+            }
+        };
+
+        fetch(API_SHEETDB, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dados)
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("Enviado com sucesso!");
+            document.getElementById("formOuvidoria").reset();
+        })
+        .catch(err => {
+            console.error(err);
+            alert("Erro ao enviar dados.");
+        });
+    });
+</script>
+
+</body>
+</html>
